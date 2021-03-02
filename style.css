@@ -58,7 +58,6 @@ form button {
   background: var(--b-darkfont);
   cursor: pointer;
   transition: all 0.3s ease;
-  outline: none;
 }
 form button:hover {
   background: var(--b-btn);
@@ -279,4 +278,55 @@ select {
   color: var(--b-lightfont);
   text-align: center;
   padding: 10px;
+}
+/*responsive*/
+@media only screen and (max-width: 700px) {
+  /*form*/
+  form input {
+    max-width: 10rem;
+  }
+
+  form input,
+  form button {
+    font-size: 1rem;
+  }
+  /*select*/
+  select {
+    padding: 0.6rem;
+  }
+  .select::after {
+    padding: 0.5rem;
+  }
+  /*buttons*/
+  .deleted-btn,
+  .completed-btn,
+  .bottom-btns {
+    font-size: 0.8rem;
+  }
+  /*todo-cards*/
+  .todo {
+    font-size: 1rem;
+  }
+  .todo-list {
+    min-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .bottom {
+    font-size: 1rem;
+  }
+  .select {
+    position: absolute;
+    margin-top: 6rem;
+  }
+  .deleted-btn,
+  .completed-btn,
+  .bottom-btns {
+    padding: 0.5rem;
+    font-size: 0.6rem;
+  }
+  .toggle {
+    --width: 30px;
+  }
 }
