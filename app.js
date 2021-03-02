@@ -117,23 +117,21 @@ function cmpDelete(e) {
 
 function save(e) {
   if (!autoSave.checked) {
-    let todos
-    if (localStorage.getItem('todos') === null) {
-      todos = []
-    } else {
-      todos = JSON.parse(localStorage.getItem('todos'))
-    }
-    todos.splice(0)
-    localStorage.setItem('todos', JSON.stringify(todos))
-    const todo = todoUl.querySelectorAll('.todo')
-    todo.forEach(function (Element) {
-      const todoText = Element.innerText
-      saveLocalTodos(todoText)
-    })
+    saveFunction()
   }
 }
 
 function saveFunction(e) {
+  let todos
+  if (localStorage.getItem('todos') === null) {
+    todos = []
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'))
+  }
+
+  todos.splice(0)
+  localStorage.setItem('todos', JSON.stringify(todos))
+
   const todo = todoUl.querySelectorAll('.todo')
   todo.forEach(function (Element) {
     const todoText = Element.innerText
@@ -144,7 +142,7 @@ function saveFunction(e) {
 ///////
 function automaticSave(e) {
   if (this.checked) {
-    saveFunction
+    saveFunction()
     localStorage.setItem('as', autoSave.checked)
   } else {
     localStorage.setItem('as', false)
