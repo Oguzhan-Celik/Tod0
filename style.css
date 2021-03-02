@@ -310,11 +310,17 @@ select {
   .todo-list {
     min-width: 50%;
   }
+  .bottom {
+    font-size: 1.3rem;
+  }
+  .toggle {
+    --width: 40px;
+  }
 }
 
 @media only screen and (max-width: 450px) {
   .bottom {
-    font-size: 1rem;
+    padding-top: 0;
   }
   .select {
     position: absolute;
@@ -324,7 +330,10 @@ select {
   .completed-btn,
   .bottom-btns {
     padding: 0.5rem;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
+  }
+  .bottom-btns {
+    margin-top: 0.3rem;
   }
   .toggle {
     --width: 30px;
